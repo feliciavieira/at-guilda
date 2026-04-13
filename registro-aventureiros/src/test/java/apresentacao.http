@@ -1,0 +1,12 @@
+### Teste de Cadastro de Aventureiro (Postgres + MongoDB)
+POST http://localhost:8080/aventureiros
+Content-Type: application/json
+
+{
+  "nome": "Legolas",
+  "classe": "Arqueiro",
+  "nivel": 20
+}
+
+### Teste de Listagem (Opcional - Ver todos no Postgres)
+GET http://localhost:8080/aventureiros
