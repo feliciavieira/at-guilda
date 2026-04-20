@@ -12,11 +12,9 @@ public class ConfiguracaoCache {
 
     @Bean
     public CacheManager cacheManager(){
-        // Mudei o nome do identificador do cache de "topMissoes" para "cache_painel_tatico"
         return new ConcurrentMapCacheManager("cache_painel_tatico");
     }
 
-    // Mantive os 5 minutos (300.000ms), mas mudei o nome do método de limpeza
     @Scheduled(fixedRate = 300000)
     @CacheEvict(value = "cache_painel_tatico", allEntries = true)
     public void resetarCacheSetorial() {

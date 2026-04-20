@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface ParticipacaoRepository extends JpaRepository<ParticipacaoMissao, Long> {
 
-    // Esta Query resolve o erro do ParticipacaoService
+    // Esta query resolve o erro do ParticipacaoService
     @Query("SELECT new com.guilda.registro_aventureiros.dto.RankingParticipacaoDto(" +
             "p.aventureiro.id, p.aventureiro.nome, COUNT(p.id), SUM(p.recompensaOuro), " +
             "COUNT(CASE WHEN p.destaqueMvp = true THEN 1 END)) " +

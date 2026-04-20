@@ -7,5 +7,4 @@ import org.springframework.data.elasticsearch.repository.config.EnableElasticsea
 @EnableElasticsearchRepositories(basePackages = "com.guilda.registro_aventureiros.repository.elastic")
 public class ElasticsearchConfig {
     // Esta classe avisa ao Spring onde procurar os repositórios do Elastic
-    // e configura automaticamente o ElasticsearchTemplate que você usou no Service.
 }

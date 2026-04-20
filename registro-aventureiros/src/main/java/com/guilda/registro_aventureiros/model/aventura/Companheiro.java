@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
-@Table(name = "tb_companheiros")
+@Table(name = "tb_companheiros")//um companheiro animal
 @Data
 public class Companheiro {
     @Id
@@ -18,6 +18,6 @@ public class Companheiro {
     private Especie especie;
 
     @OneToOne
-    @JoinColumn(name = "aventureiro_id")
+    @JoinColumn(name = "aventureiro_id") //detentora da chave estrangeira
     private Aventureiro aventureiro;
 }

@@ -48,7 +48,7 @@ public class AventureiroService {
                 salvo.isAtivo()
         );
     }
-
+    //Para otimizar a performance no nível do Hibernate e do banco de dados
     @Transactional(readOnly = true)
     public Page<AventureiroResumoDto> listarPaginado(Pageable paginacao) {
         return aventureiroRepository.findAll(paginacao)

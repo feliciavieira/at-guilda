@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/participacoes")
-@RequiredArgsConstructor // Isso substitui o construtor manual que estava dando erro
+@RequiredArgsConstructor // Isso substitui o construtor manual
 public class ParticipacaoMissaoController {
 
     private final ParticipacaoService participacaoService;

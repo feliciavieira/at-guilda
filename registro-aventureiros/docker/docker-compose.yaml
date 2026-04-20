@@ -1,24 +1,25 @@
 services:
   postgres:
-    image: leogloriainfnet/postgres-tp2-spring:2.0-win
+    image: postgres:15
     container_name: guild-postgres
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: postgres
+      POSTGRES_DB: aventura_db
     ports:
       - "5433:5432"
     volumes:
       - guild_pgdata:/var/lib/postgresql/data
-      - ./init/:/docker-entrypoint-initdb.d
 
   elasticsearch:
-    image: leogloriainfnet/elastic-tp2-spring:1.0-alternativo
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.10.4
     container_name: guilda-es
     ports:
       - "9200:9200"
     environment:
-      ES_JAVA_OPTS: "-Xms512m -Xmx512m"
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
 
 volumes:
   guild_pgdata:

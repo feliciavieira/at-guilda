@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @MappedSuperclass
 public abstract class EntidadeAuditavel {
 
-    @CreationTimestamp
+    @CreationTimestamp //framework gerencia as datas de criação e alteração garantindo a rastreabilidade
     @Column(name = "created_at", updatable = false)
     private LocalDateTime dataCriacao;
 

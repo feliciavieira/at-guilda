@@ -19,6 +19,6 @@ public interface AventureiroRepository extends JpaRepository<Aventureiro, Long> 
     @Query("SELECT a FROM Aventureiro a WHERE a.nivel >= :nivel AND a.organizacao.id = :orgId")
     Page<Aventureiro> buscarElitePorOrganizacao(Integer nivel, Long orgId, Pageable pageable);
 
-    // Método para verificar se o nome já existe (bom para validação no Service)
+    //Método para verificar se o nome já existe
     boolean existsByNomeIgnoreCase(String nome);
 }

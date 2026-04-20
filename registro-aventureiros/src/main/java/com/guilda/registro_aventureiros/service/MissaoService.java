@@ -35,8 +35,6 @@ public class MissaoService {
         Missao missao = new Missao();
         missao.setTitulo(titulo);
         missao.setStatus(StatusMissao.PLANEJADA);
-        // O campo na sua Entity é dataCriacao (da auditoria) ou setCreatedAt manual?
-        // Ajustei para o que estava no seu DTO:
         Missao salva = missaoRepository.save(missao);
         return new MissaoListagemDto(salva.getId(), salva.getTitulo(), salva.getStatus(), LocalDateTime.now());
     }

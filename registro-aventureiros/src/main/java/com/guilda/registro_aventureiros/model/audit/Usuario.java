@@ -16,16 +16,16 @@ public class Usuario {
     @Column(name = "nome", nullable = false)
     private String username;
 
-    @Column(name = "senha_hash", nullable = false) // Nome banco legado
+    @Column(name = "senha_hash", nullable = false) //garantir a compatibilidade com nomes de colunas de bancos legados
     private String senha;
 
     @Column(unique = true)
     private String email;
 
     @Enumerated(EnumType.STRING)
-    private SituacaoUsuario status;
+    private SituacaoUsuario status; //salvo como texto legível, facilita audit
 
     @ManyToOne
-    @JoinColumn(name = "organizacao_id") // Relacionamento FK
+    @JoinColumn(name = "organizacao_id") //estabelece uma Chave Estrangeira (FK)
     private Organizacao organizacao;
 }

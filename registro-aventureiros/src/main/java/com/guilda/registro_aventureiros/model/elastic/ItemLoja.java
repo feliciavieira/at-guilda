@@ -13,16 +13,16 @@ public class ItemLoja {
     @Id
     private String id; // ID é String
 
-    @Field(type = FieldType.Text, name = "nome")
+    @Field(type = FieldType.Text, name = "nome") //tokenização das palavras
     private String nome;
 
-    @Field(type = FieldType.Text, name = "descricao")
+    @Field(type = FieldType.Text, name = "descricao")// tokenização das palavras
     private String descricao;
 
-    @Field(type = FieldType.Double, name = "preco")
+    @Field(type = FieldType.Double, name = "preco") // tratar esse dado como um valor numérico de dupla precisã
     private Double preco;
 
-    @Field(type = FieldType.Keyword, name = "categoria")
+    @Field(type = FieldType.Keyword, name = "categoria") //filtragem
     private String categoria;
 
     @Field(type = FieldType.Keyword, name = "raridade")

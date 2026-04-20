@@ -16,7 +16,7 @@ public class Aventureiro {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 120) // Tamanho máximo: 120
+    @Column(nullable = false, length = 120) // para campos críticos
     private String nome;
 
     @Enumerated(EnumType.STRING)
@@ -24,7 +24,7 @@ public class Aventureiro {
     private Classe classe;
 
     @Column(nullable = false)
-    private Integer nivel = 1; // Valor mínimo 1
+    private Integer nivel = 1; // novos aventureiros entrem no sistema
 
     @Column(nullable = false)
     private boolean ativo = true;
@@ -38,10 +38,10 @@ public class Aventureiro {
     private LocalDateTime dataAtualizacao;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "organizacao_id") // Referência
+    @JoinColumn(name = "organizacao_id") // unica guilda
     private Organizacao organizacao;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "usuario_cadastro_id") // Usuário responsável
+    @JoinColumn(name = "usuario_cadastro_id") // rastreabilidade de autoria
     private Usuario usuarioResponsavel;
 }

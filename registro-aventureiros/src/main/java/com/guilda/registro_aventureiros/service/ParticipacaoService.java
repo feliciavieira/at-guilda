@@ -13,7 +13,7 @@ public class ParticipacaoService {
     private final ParticipacaoRepository participacaoRepository;
 
     public List<RankingParticipacaoDto> gerarRanking() {
-        // Este método precisa existir para o Controller parar de dar erro
+        // método  para o controller parar de dar erro
         return participacaoRepository.findRankingAventureiros();
     }
 }
